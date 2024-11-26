@@ -57,8 +57,8 @@ def swap_face(face_swapper,
     """
     paste source_face on target image
     """
-    source_face = source_faces[source_index]
-    target_face = target_faces[target_index]
+    source_face =source_faces[source_index] if source_index<len(source_faces) else source_faces[0]
+    target_face =target_faces[target_index] if target_index<len(target_faces) else target_faces[0]
 
     return face_swapper.get(temp_frame, target_face, source_face, paste_back=True)
  
